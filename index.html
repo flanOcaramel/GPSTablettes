@@ -31,7 +31,7 @@
             const markers = {};
 
             setInterval(() => {
-                fetch("positions.json?" + Date.now())
+                fetch("position.json?" + Date.now())
                     .then((r) => r.json())
                     .then((data) => {
                         for (const mac in data) {

@@ -1,5 +1,5 @@
 <?php
-$file = "positions.json";
+$file = "position.json";
 $data = file_exists($file) ? json_decode(file_get_contents($file), true) : [];
 
 $mac = $_POST["mac"];
