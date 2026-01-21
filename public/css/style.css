@@ -1,0 +1,31 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+#map {
+    height: 100%;
+    width: calc(100% - 300px);
+    float: left;
+}
+#sidebar {
+    width: 300px;
+    height: 100%;
+    float: right;
+    box-shadow: -2px 0 6px rgba(0, 0, 0, 0.2);
+    padding: 12px;
+    box-sizing: border-box;
+    background: #fff;
+    overflow-y: auto;
+}
+#devices li {
+    margin-bottom: 8px;
+    font-family: Arial, sans-serif;
+    cursor: pointer;
+}
+#devices li:hover {
+    background: #f3f3f3;
+}
