@@ -22,7 +22,7 @@ function addOrUpdate(row) {
     marker.bindPopup(fmtRow(row));
     markers[row.mac] = marker;
   }
-  
+
   // Update sidebar
   let li = document.getElementById("dev-" + row.mac.replace(/[:.]/g, "_"));
   if (!li) {
@@ -30,7 +30,7 @@ function addOrUpdate(row) {
     li.id = "dev-" + row.mac.replace(/[:.]/g, "_");
     deviceList.appendChild(li);
     li.addEventListener("click", () => {
-      map.setView(pos, 16);
+      map.setView(pos, 24);
       markers[row.mac].openPopup();
     });
   }
@@ -43,19 +43,18 @@ async function loadExisting() {
   if (!rows || !rows.length) return;
   rows.forEach((r) => addOrUpdate(r));
   // center map to first device
-  map.setView([rows[0].lat, rows[0].lon], 6);
+  map.setView([rows[0].lat, rows[0].lon], 18);
 }
 
 function initMap() {
-  // Initialize OpenStreetMap with Leaflet centered on Faculté de Médecine de Nancy
-  map = L.map('map').setView([48.6924, 6.1844], 15);
-  
+  map = L.map("map").setView([48.6924, 6.1844], 19);
+
   // Add OpenStreetMap tiles
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '© OpenStreetMap contributors',
-    maxZoom: 19
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution: "© OpenStreetMap contributors",
+    maxZoom: 19,
   }).addTo(map);
-  
+
   loadExisting();
 
   const socket = io();
@@ -65,4 +64,4 @@ function initMap() {
 }
 
 // Initialize map when DOM is loaded
-document.addEventListener('DOMContentLoaded', initMap);
+document.addEventListener("DOMContentLoaded", initMap);
