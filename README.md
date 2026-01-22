@@ -1,11 +1,11 @@
-# Arduino GPS Tracker
+# GPSTablettes
 
 Une application de suivi GPS en temps réel avec Arduino UNO R4 WiFi et une interface web OpenStreetMap.
 
 ## Structure du projet
 
 ```
-arduino-tracker/
+GPSTablettes/
 ├── server.js                 # Serveur principal Node.js
 ├── package.json              # Dépendances et scripts npm
 ├── config/                   # Fichiers de configuration
